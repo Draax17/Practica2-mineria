@@ -30,8 +30,8 @@ print(f"\nDimensiones del dataset: {df.shape}")
 
 7) instacia de un un modelo de clasificacion 
 8) entrenamiento del modelo con el conjunto de entrenamiento
-Realiza la prediccion con el conjunto de prueba
-9) evalua el modelo utilizando las metricas de accuracy, confusion matrix y classification report
+9)Realiza la prediccion con el conjunto de prueba
+10) evalua el modelo utilizando las metricas de accuracy, confusion matrix y classification report
 """
 
 # 1) Análisis exploratorio básico
@@ -177,7 +177,7 @@ print("\nClassification Report:")
 print(report)
 
 
-# Visualización de la matriz de confusión
+# 10) Visualización de la matriz de confusión
 plt.figure(figsize=(6, 5))
 sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', cbar=False)
 plt.title('Matriz de Confusión - Logistic Regression')
