@@ -10,6 +10,7 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
 
 
+
 #1 Cargar datos a utilizar 
 url = "https://raw.githubusercontent.com/IBM/telco-customer-churn-on-icp4d/master/data/Telco-Customer-Churn.csv"
 
@@ -18,7 +19,6 @@ df = pd.read_csv(url)
 print("Visualización inicial de los datos:\n")
 print(df.head())
 
-#df.info()
 
 """
 1) Realizar el analisis exploratorio del dataset
@@ -34,3 +34,21 @@ print(df.head())
 Realiza la prediccion con el conjunto de prueba
 9) evalua el modelo utilizando las metricas de accuracy, confusion matrix y classification report
 """
+
+df=df.drop(columns=['customerID'])
+print("\nInformación del dataset después de eliminar la columna 'customerID':\n")
+print("################################################################\n" + str(df.head()) + "\n################################################################\n")
+df.info()
+
+
+#Graficas de sexo vs churn
+plt.figure(figsize=(8, 6))
+sns.countplot(x='gender', hue='Churn', data=df)
+plt.title('Distribución de Churn por Género')
+plt.xlabel('Género')
+plt.ylabel('Cantidad de Clientes')
+plt.legend(title='Churn', loc='upper right')
+plt.show()
+
+
+
